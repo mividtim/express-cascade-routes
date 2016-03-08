@@ -1,0 +1,13 @@
+{
+  "author": "Tim Garthwaite <tim@mividstudios.com>",
+  "name": "express-cascade-routes",
+  "description": "Cascade Express routes in a directory hierarchy",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "http://www.github.com/mividtim/express-cascade-routes",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mividtim/express-cascade-routes.git"
+  },
+  "main": "index.js"
+}
