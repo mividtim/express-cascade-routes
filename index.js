@@ -10,7 +10,7 @@ module.exports = function(dirname) {
       return;
     subRouter = require(dirname + '/' + file.substr(0, file.indexOf('.')));
     console.log(subRouter);
-    router.use('/', subRouter, { mergeParams: true });
+    router.use('/', subRouter);
     return router;
   });
 };
