@@ -6,10 +6,10 @@ routes, build up your index.js as follows:
     var cascadeRoutes = require('express-cascade-routes');
     var express = require('express');
     var router = express.Router();
-    router.post('/', function(req, res) {
+    router.route('/someRoute').post(function(req, res) {
         // ...
     });
-    router.use(cascadeRoutes(__dirname));
+    router.use('/', cascadeRoutes(__dirname));
     module.exports = router;
 
 If the current directory has no routes, but needs to cascade routes
