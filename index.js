@@ -17,8 +17,8 @@ module.exports = function(dirname) {
     subRouter = require(dirname + routeName);
     console.log(JSON.stringify(subRouter.stack[0].route));
     router.use(routeName, subRouter);
-    console.log(JSON.stringify(router.stack[0].route));
   });
+  console.log(router);
   return router;
 };
 
