@@ -8,9 +8,10 @@ module.exports = function(dirname) {
         || file.substr(file.lastIndexOf('.') + 1) !== 'js'
         || file.substr(0, 1) === '_')
       return;
-    subRouter = require(dirname + '/' + file.substr(0, file.indexOf('.')));
+    routeName = file.substr(0, file.indexOf('.'));
+    subRouter = require(dirname + '/' + routeName);
     console.log(subRouter);
-    router.use('/', subRouter);
+    router.use('/' + routeName, subRouter);
   });
   return router;
 };
