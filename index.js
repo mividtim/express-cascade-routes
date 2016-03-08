@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 
 module.exports = function(dirname) {
-  var router = express.Router();
+  var router = express.Router({ mergeParams: true });
   fs.readdirSync(dirname).forEach(function(file) {
     if(file === 'index.js'
         || file.substr(file.lastIndexOf('.') + 1) !== 'js'
@@ -11,7 +11,7 @@ module.exports = function(dirname) {
     subRouter = require(dirname + '/' + file.substr(0, file.indexOf('.')));
     console.log(subRouter);
     router.use('/', subRouter);
-    return router;
   });
+  return router;
 };
 
